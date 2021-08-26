@@ -1,0 +1,407 @@
+$primaryAccent: #09374E
+$primaryAccentOff: #09374EA0
+$shadowColor: #0007
+$articleDivider_A: #DEDEDE
+$articleDivider_B: #DEDEDE30
+$articleMarginSpace: 27px
+$articlePadding: 50px
+$darkFont: #4A4A4A
+
+@mixin horizontalFaderLine
+  height: 1px
+  width: calc(100% + 50px * 2)
+  margin-left: -$articlePadding
+  background: linear-gradient(45deg, $articleDivider_A, $articleDivider_B)
+
+@mixin verticalFaderLine
+  width: 1px
+  margin-top: -$articleMarginSpace
+  align-self: stretch
+  background: linear-gradient($articleDivider_A, $articleDivider_B)
+
+@mixin languageFaderLines
+  height: 1px
+  align-self: stretch
+  width: calc(100% + 32px)
+  background: linear-gradient(045deg, #DEDEDE30, #DEDEDE, #DEDEDE30)
+  margin: 33px 0 18px -32px
+
+@function get-dash-value($radius, $percentage)
+  $circumference: 2 * 3.1415927 * $radius
+  $percentage-as-decimal: $percentage / 100%
+  @return $circumference * $percentage-as-decimal
+
+
+*
+  margin: 0
+  padding: 0
+  font-family: "Segoe UI", monospace
+
+ul
+  list-style: none
+.bgw
+  background-color: #FFFFFF
+.df
+  color: $darkFont
+
+.fx
+  display: flex
+  &.fdc
+    flex-direction: column
+  &.fdr
+    flex-direction: row
+  &.jcc
+    justify-content: center
+  &.aic
+    align-items: center
+
+body
+  min-width: 100%
+  min-height: 100vh
+  position: relative
+
+  .bg-layer
+    z-index: -1
+    background: url("/images/bg_pattern.jpg")
+    //background-color: #FFFFFF
+    height: 100%
+    width: 100%
+    position: absolute
+
+  .image_view
+    background: #fafafa
+    z-index: 10
+    position: absolute
+    min-width: 100%
+    min-height: 100%
+    max-height: 100%
+    .im_container
+      padding: 2rem 0
+      overflow-y: scroll
+      min-width: 100%
+      img
+        max-width: 80vw
+        max-height: 90vh
+        min-height: 85vh
+        border: 1px solid #0002
+        animation-name: zoom
+        animation-duration: 0.6s
+        margin: 5px 0
+    span
+      box-sizing: border-box
+      position: fixed
+      top: 2rem
+      left: 4rem
+      width: 2rem
+      height: 2rem
+      padding-top: 0.2rem
+      border-radius: 1rem
+      background: #FFF
+      color: #000
+      border-color: #000
+      font-weight: 500
+      text-align: center
+      vertical-align: center
+      cursor: pointer
+      box-shadow: 0 0 5px
+      &:hover
+        transition: ease-out 0.3s
+        box-shadow: 0 0 10px
+
+  #obj_3d_view
+    display: none
+    position: fixed
+    padding: 25%
+    background-color: rgba(61, 82, 99, 0.46)
+    z-index: 20
+    width: 100%
+    height: 100vh
+    //display: flex
+    align-items: stretch
+    justify-content: center
+    box-sizing: border-box
+    #obj_3d_view_container
+      flex-grow: 1
+      background-color: #EBEBEB
+
+  main
+    margin: 2vw
+    flex-grow: 1
+
+    >aside
+      position: fixed
+      top: 0
+      bottom: 0
+      z-index: 1
+      nav
+        margin-right: 10px
+        z-index: 2
+        ul
+          box-shadow: 2px 0 6px -2px $shadowColor
+          li
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            min-width: 72px
+            height: 74px
+            padding: 9px
+            box-sizing: border-box
+            background-color: #FFF
+            cursor: pointer
+            transition: all 200ms
+            &:first-child
+              border-radius: 4px 4px 0 0
+            &:last-child
+              border-radius: 0 0 4px 4px
+            &:not(:last-child)
+              border-bottom: 1px solid #75757530
+            &:hover
+              background-color: #EEE
+            &.active
+              box-shadow: 0 3px 4px -4px $shadowColor inset, 0 -3px 4px -4px $shadowColor inset
+            span
+              text-transform: uppercase
+              font-weight: 500
+              font-size: 10px
+              margin-top: 5px
+      section#card
+        min-width: 430px
+        min-height: 560px
+        box-shadow: -20px -20px $primaryAccentOff, 2px 0 6px -2px $shadowColor
+        border-radius: 4px
+        z-index: 1
+        .portrait
+          flex-grow: 5
+          justify-content: flex-end
+          background-color: #8F8F8F
+          background-image: url("/images/portrait-removebg-lr.png")
+          background-size: contain
+          background-repeat: no-repeat
+          background-position: center
+          border-radius: 4px 4px 0 0
+        .info
+          flex-grow: 1
+          h1
+            font-size: 30px
+            font-weight: 400
+          h3
+            font-size: 16px
+            color: $primaryAccent
+            margin-top: 3px
+            font-weight: 500
+          ul
+            margin: 28px 0 36px
+            li
+              &:not(:last-child)
+                margin-right: 21px
+              a
+                display: flex
+          button
+            font-size: 15px
+            background: #0000
+            border: none
+            text-transform: uppercase
+            font-weight: 600
+            cursor: pointer
+          
+
+    >section.bgw
+      position: relative
+      padding: 30px $articlePadding 70px
+      margin-left: 512px
+      box-sizing: border-box
+      border-radius: 4px
+      flex-grow: 1
+      color: $darkFont
+      align-self: stretch
+      background: #f8f8f8
+      //min-height: 420px
+      //min-height: calc(100vh - 100px)
+      //background: url("/images/bg_pattern.jpg")
+      //background: rgb(241, 241, 241)
+      >header
+        justify-content: space-between
+        margin-bottom: $articleMarginSpace
+        h2
+          display: none
+          text-transform: uppercase
+          font-weight: 600
+          font-size: 1.6rem
+          &.active
+            display: block
+        nav
+          display: none
+          &.active
+            display: block
+          ul
+            li
+              font-weight: 500
+              cursor: pointer
+              &.active
+                color: $primaryAccentOff
+              &:not(:first-child)
+                margin-left: 30px
+      >.shader_line
+        @include horizontalFaderLine
+
+      >article
+        &.active
+          display: flex
+        display: none
+        flex-direction: column
+        margin-top: $articleMarginSpace
+
+      >article#about
+        h4
+          margin-bottom: 10px
+        p
+          margin-bottom: 20px
+
+      >article#resume
+        >div.content.resume
+          flex: 1
+          ul
+            list-style: unset
+            margin-left: 1.5rem
+          &:last-child
+            padding-left: 32px
+          .entry:not(:first-child)
+            margin-top: 1rem
+          .entry strong
+            font-weight: 600
+          h4.education
+            margin-top: 27px
+        .shader_line
+          @include verticalFaderLine
+
+        >h2
+          margin: 40px 0 27px
+          font-size: 1.6rem
+          font-weight: 600
+          text-transform: uppercase
+        >.shader_line
+          @include horizontalFaderLine
+          margin-top: 6px
+          //margin-bottom: 30px
+        >div.content.skills
+          margin-top: $articleMarginSpace
+          .col
+            flex-grow: 1
+            flex-shrink: 0
+            &:first-child
+              .entry
+                display: flex
+                align-items: center
+                span
+                  flex-grow: 1
+                  label
+                    color: #b1494a
+                > div
+                  width: 60px
+                  height: 60px
+                  margin-top: -15px
+                  margin-right: 1.8rem
+            &:last-child
+              padding-left: 32px
+              .shader_line
+                @include languageFaderLines
+              .entry
+                .horizontalBar
+                  height: 10px
+                  max-width: 300px
+                  background-color: #EBEBEB
+                  margin-top: 12px
+                  .filler
+                    height: 100%
+
+                &.english .horizontalBar .filler
+                  width: 78%
+                  background-color: #F05B30
+                &.arduino .horizontalBar .filler
+                  width: 40%
+                  background-color: #462446
+                &.product_design .horizontalBar .filler
+                  width: 80%
+                  background-color: #3D5263
+            h4
+              margin-bottom: 4px
+            .entry
+              margin-top: 30px
+          >.shader_line
+            @include verticalFaderLine
+        h4
+          font-size: 1.40rem
+          font-weight: 600
+
+      >article#portfolio
+        >section
+          display: none
+          &.active
+            display: unset
+
+          div.pics
+            flex-wrap: wrap
+            div.pic
+              display: flex
+              flex-direction: column
+              align-items: center
+              label
+                margin-top: 10px
+                cursor: pointer
+            .frame
+              margin: 1rem 5px 0 5px
+              width: 210px
+              height: 150px
+              background-repeat: no-repeat
+              background-position: center
+              background-size: cover
+              border: 1px solid #AAA5
+              box-shadow: 0 3px 6px #00000020
+              cursor: pointer
+              &:hover
+                box-shadow: 0 5px 9px #00000020
+
+      >article#contact
+        >p
+          font-weight: 600
+          margin-bottom: 1rem
+        label
+          display: flex
+          flex-direction: column
+          > input, > textarea
+            margin-top: 5px
+        >div
+          margin-top: 1rem
+          >div
+            flex-grow: 1
+            &:first-child
+              margin-right: 3rem
+        > button
+          margin-top: 1.5rem
+          align-self: flex-start
+          background-color: #3D5263
+          color: white
+          padding: 3px 12px
+          font-weight: 600
+          border-radius: 3px
+          font-size: 0.9rem
+          border: none
+          text-transform: uppercase
+
+        .mid
+          align-self: center
+          > div
+            margin-top: 10px
+          a
+            text-decoration: none
+            color: unset
+            font-weight: 600
+          span
+            background-color: #3D5263
+            color: white
+            padding: 2px 5px
+            font-weight: 600
+            border-radius: 3px
+            font-size: 0.9rem
+            margin-right: 10px

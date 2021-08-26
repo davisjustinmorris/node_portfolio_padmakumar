@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/chart.min.js"></script>
+    <script src="/js/three.min.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/three_manager.js" type="module"></script>
+</head>
+<body class="fx">
+    <div class="bg-layer"></div>
+
+    <div class="image_view fx jcc" style="display: none">
+        <div class="im_container fx fdc aic"></div>
+        <span>x</span>
+    </div>
+
+    <div id="obj_3d_view"><div id="obj_3d_view_container"></div></div>
+
+    <main class="fx aic">
+        <aside class="fx aic">
+            <nav>
+                <ul class="df">
+                    <li>
+                        <img src="icons/navigation_about.png" alt="">
+                        <span>about</span>
+                    </li>
+                    <li>
+                        <img src="icons/navigation_resume.png" alt="">
+                        <span>resume</span>
+                    </li>
+                    <li>
+                        <img src="icons/navigation_works.png" alt="">
+                        <span>portfolio</span>
+                    </li>
+                    <li>
+                        <img src="icons/navigation_contact.png" alt="">
+                        <span>contact</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <section id="card" class="bgw fx fdc">
+                <div class="portrait fx fdc">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="429.96" height="54.488" viewBox="0 0 429.96 54.488">
+                        <path id="Path_1" data-name="Path 1" d="M4,234.151c-221.344,75.894-429.96-5.189-429.96-5.189V283.45H4Z" transform="translate(425.96 -228.961)" fill="#fff"/>
+                    </svg>
+                </div>
+                <div class="info fx fdc aic jcc">
+                    <h1 class="df">PADMAKUMAR</h1>
+                    <h3>Product Designer/Engineer</h3>
+
+                    <ul class="social_media fx fdr aic">
+                        <li><a href="https://www.linkedin.com/in/padmakumarks/" target="_blank">
+                            <img src="icons/sc_linkedin.png" alt="">
+                        </a></li>
+                        <li><a href="https://www.instagram.com/cuboid_wireframe/" target="_blank">
+                            <img src="icons/sc_instagram.png" alt="">
+                        </a></li>
+                        <li><a href="https://www.behance.net/padmakumar843b" target="_blank">
+                            <img src="icons/sc_behance.png" alt="">
+                        </a></li>
+                        <li><a href="mailto:padmakumar.ks@icloud.com">
+                            <img src="icons/sc_mail.png" alt="">
+                        </a></li>
+                        <li><a href="#">
+                            <img src="icons/sc_call.png" alt="">
+                        </a></li>
+                    </ul>
+
+                    <button class="df">contact me</button>
+                </div>
+            </section>
+        </aside>
+
+        <section class="bgw">
+            <header class="fx aic">
+                <h2 class="section_target about">About Me</h2>
+                <h2 class="section_target resume">Resume</h2>
+                <h2 class="section_target portfolio">Portfolio</h2>
+                <nav class="section_target portfolio">
+                    <ul class="fx fdr">
+                        <li class="projects active">Projects</li>
+                        <li class="images">Image Board</li>
+                        <li class="art">Art</li>
+                    </ul>
+                </nav>
+                <h2 class="section_target contact">Hello</h2>
+            </header>
+
+            <div class="shader_line"></div>
+
+            <article id="about">
+                <h4>"Hello! I'm PADMAKUMAR.</h4>
+
+                <p>Thank you very much for visiting my page!</p>
+                <p>I have a degree in Mechanical Engineering. Though I am a technical person by profession, I have a passion for art. I wanted to mention here that I am a self-taught artist.</p>
+                <p>I believe that there is a common denominator for an engineer, designer and artist: Graphicacy. The ability to think and communicate in visual terms. The need and passion helped me to develop and finally add an additional tool to my design skills; my ability to sketch and render forms. I discovered that I have a considerable level of ability to convey object forms visually through sketches and rendering.</p>
+                <p>I have been working in the design engineering industry since 2005 and had the opportunity to get involved in various product/system design projects for industries like Aerospace and Medical.  I have developed the skills to convey the design concepts and build detailed engineering design through 3D CAD systems. Reverse Engineering, Surface Modelling and Finite Element Analysis are other areas of exposure.</p>
+                <p>Industry looks at Designing and Engineering as two parallel value streams working towards a common goal, a product or a service. A designer focus on the product form, material, its colour, texture, tactile qualities and ergonomics. Whereas an engineer looks at the same design for its structural integrity, thermal capabilities, design for manufacturing and assembly and reliability. If one cannot agree with the other, there is a conflict. I see this as a black and white issue without any grey areas in between blending both together. I believe that I belong to that grey area where I appreciate both schools of thought and possess the skills to create a product concept and make it a reality.</p>
+                <p>My goal is to get involved in building sustainable products that serves a great purpose by innovative design approach, so that it serves a greater good for the humankind.</p>
+                <p>I am looking forward to talk to you! Thanks again!"</p>
+                <p>Padmakumar</p>
+
+            </article>
+
+            <article id="resume">
+                <div class="fx fdc content resume">
+<!--                    <div class="fx fdc col">-->
+                    <h4>Experience</h4>
+                    <div class="entry fx fdc">
+                        <span><strong>Year: </strong>[02/2015 - 07/2020]</span>
+                        <span><strong>Role: </strong>Senior Associate</span>
+                        <div class="fx">
+                            <span><strong>Organization: </strong></span>
+                            <span style="margin-left: 5px">Cognizant Technology Solutions Pvt. Ltd.</span>
+                        </div>
+                        <span><strong>Role Description:</strong></span>
+                        <ul>
+                            <li>Build a physically viable design from concept ideas</li>
+                            <li>Develop concepts for Medical devices, build proof of concept prototypes for voice of the customer</li>
+                            <li>Product bench marking [product tear down/ gap analysis/propose new design configuration based on benchmark analysis]</li>
+                        </ul>
+                    </div>
+                    <div class="entry fx fdc">
+                        <span><strong>Year: </strong>[08/2008 - 06/2012]</span>
+                        <span><strong>Role: </strong>Senior Design Engineer</span>
+                        <span><strong>Organization: </strong>Goodrich Aerospace Pvt. Ltd.</span>
+                        <span><strong>Role Description:</strong></span>
+                        <ul>
+                            <li>Design and manufacturing support for emergency evacuation slides and their packing systems</li>
+                        </ul>
+                    </div>
+                    <div class="entry fx fdc">
+                        <span><strong>Year: </strong>[01/2007 - 08/2008]</span>
+                        <span><strong>Role: </strong>Associate IT Consultant</span>
+                        <span><strong>Organization: </strong>ITC InfoTech India Ltd</span>
+                        <span><strong>Role Description:</strong></span>
+                        <ul>
+                            <li>Provide Design and Engineering solutions to various clients</li>
+                        </ul>
+                    </div>
+                    <div class="entry fx fdc">
+                        <span><strong>Year: </strong>[11/2005 - 01/2007]</span>
+                        <span><strong>Role: </strong>Mechanical Engineer</span>
+                        <span><strong>Organization: </strong>Cimtech Systems Pvt. Ltd</span>
+                        <span><strong>Role Description:</strong></span>
+                        <ul>
+                            <li>Design, build and test functional prototype of Industrial Design coolers for The Coca Cola Company</li>
+                        </ul>
+                    </div>
+
+                    <h4 class="education">Education</h4>
+                    <div class="entry fx fdc">
+                            <span>Bachelors in Technology: Mechanical Engineering</span>
+                        </div>
+<!--                    </div>-->
+<!--                    <div class="shader_line"></div>-->
+<!--                    <div class="fx fdc col">-->
+<!--                        <h4>Education</h4>-->
+<!--                        <div class="entry fx fdc">-->
+<!--                            <span>Bachelors in Technology: Mechanical Engineering</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+
+                <h2>Skills</h2>
+                <div class="shader_line"></div>
+                <div class="fx content skills">
+                    <div class="fx fdc col">
+                        <h4>Design</h4>
+                        <div class="fx entry">
+                            <span>Computer Aided Design<br><label>- Creo Parametric</label></span>
+                            <div><canvas id="resume_chart_1" width="45" height="45"></canvas></div>
+                        </div>
+                        <div class="fx entry">
+                            <span>Computer Aided Industrial Design <br><label>- Alias Design</label></span>
+                            <div><canvas id="resume_chart_2" width="45" height="45"></canvas></div>
+                        </div>
+                        <div class="fx entry">
+                            <span>Computer Aided Engineering <br><label>- Ansys Workbench (Thermal)</label></span>
+                            <div><canvas id="resume_chart_3" width="45" height="45"></canvas></div>
+                        </div>
+                        <div class="fx entry">
+                            <span>Digital Rendering <br><label>- Photoshop</label><br><label>- Keyshot</label></span>
+                            <div><canvas id="resume_chart_4" width="45" height="45"></canvas></div>
+                        </div>
+                        <div class="fx entry">
+                            <span>Analog Rendering <br><label>- Sketching & Rendering</label></span>
+                            <div><canvas id="resume_chart_6" width="45" height="45"></canvas></div>
+                        </div>
+                    </div>
+                    <div class="shader_line"></div>
+                    <div class="fx fdc col">
+                        <h4>Coding</h4>
+                        <div class="entry arduino">
+                            <span>Arduino [Coding & Hardware]</span>
+                            <div class="horizontalBar"><div class="filler"></div></div>
+                        </div>
+                        <div class="shader_line"></div>
+
+                        <h4>Languages</h4>
+                        <div class="entry english">
+                            <span>English [IELTS Score- 7/9]</span>
+                            <div class="horizontalBar"><div class="filler"></div></div>
+                        </div>
+                        <div class="shader_line"></div>
+
+                        <h4>Knowledge</h4>
+                        <div class="entry product_design">
+                            <span>Product Design</span>
+                            <div class="horizontalBar"><div class="filler"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article id="portfolio">
+                <section class="projects active">
+                    <div class="pics fx">
+                        <div class="pic">
+                            <div id="res_pr_1" class="frame" style="background-image: url('images/projects/pr_1_1.jpg')"></div>
+                            <label>Helmet Smart Pack</label>
+                        </div>
+                        <div class="pic">
+                            <div id="res_pr_2" class="frame" style="background-image: url('images/projects/pr_2.jpg')"></div>
+                            <label>Helmet Smart Pack</label>
+                        </div>
+                    </div>
+                </section>
+                <section class="images fx fdc">
+                    <p>Project work presented here is the design and functional prototyping of a cooling system for Helmets.</p>
+                    <div class="pics fx">
+                        <div id="res_ib_2" class="frame" style="background-image: url('images/image_board/2.jpg')"></div>
+                        <div id="res_ib_10" class="frame" style="background-image: url('images/image_board/10.jpg')"></div>
+                        <div id="res_ib_9" class="frame" style="background-image: url('images/image_board/9.jpg')"></div>
+                        <div id="res_ib_3" class="frame" style="background-image: url('images/image_board/3.jpg')"></div>
+                        <div id="res_ib_5" class="frame" style="background-image: url('images/image_board/5.jpg')"></div>
+                        <div id="res_ib_1" class="frame" style="background-image: url('images/image_board/1.jpg')"></div>
+                    </div>
+                </section>
+                <section class="art">
+                    <div class="pics fx">
+                        <div class="pic">
+                            <div id="res_ar_1" class="frame" style="background-image: url('images/art/art_1.jpg')"></div>
+                            <label>Portrait 1</label>
+                        </div>
+                        <div class="pic">
+                            <div id="res_ar_2" class="frame" style="background-image: url('images/art/art_2.jpg')"></div>
+                            <label>Portrait 2</label>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <article id="contact">
+                <p>
+                    If you want to contact mw about anything, just get in touch below! <br>
+                    ALso feel free to follow me on instagram to see my design journal.
+                </p>
+                <div class="fx">
+                    <div>
+                        <label>
+                            First Name
+                            <input type="text" name="first_name">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Last Name
+                            <input type="text" name="last_name">
+                        </label>
+                    </div>
+                </div>
+                <div class="fx fdc">
+                    <label>
+                        Email
+                        <input type="email" name="email">
+                    </label>
+                </div>
+                <div class="fx fdc">
+                    <label>
+                        Message
+                        <textarea name="" id="" cols="30" rows="7"></textarea>
+                    </label>
+                </div>
+                <button>Submit</button>
+
+                <div class="mid fx fdc">
+                    <div><span>EMAIL: </span><a href="mailto:padmakumar.ks@icloud.com">padmakumar.ks@icloud.com</a></div>
+                    <div><span>PHONE: </span><a href="tel:919966822579">+91-9966822579</a></div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <input type="hidden" name="internal_nav_selection" id="internal_nav_selection" value="<%= internal_nav_selection %>">
+
+</body>
+</html>

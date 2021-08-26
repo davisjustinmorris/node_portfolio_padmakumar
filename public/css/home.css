@@ -1,0 +1,458 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", monospace;
+}
+
+ul {
+  list-style: none;
+}
+
+.bgw {
+  background-color: #FFFFFF;
+}
+
+.df {
+  color: #4A4A4A;
+}
+
+.fx {
+  display: flex;
+}
+.fx.fdc {
+  flex-direction: column;
+}
+.fx.fdr {
+  flex-direction: row;
+}
+.fx.jcc {
+  justify-content: center;
+}
+.fx.aic {
+  align-items: center;
+}
+
+body {
+  min-width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+body .bg-layer {
+  z-index: -1;
+  background: url("/images/bg_pattern.jpg");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+body .image_view {
+  background: #fafafa;
+  z-index: 10;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+body .image_view .im_container {
+  padding: 2rem 0;
+  overflow-y: scroll;
+  min-width: 100%;
+}
+body .image_view .im_container img {
+  max-width: 80vw;
+  max-height: 90vh;
+  min-height: 85vh;
+  border: 1px solid #0002;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+  margin: 5px 0;
+}
+body .image_view span {
+  box-sizing: border-box;
+  position: fixed;
+  top: 2rem;
+  left: 4rem;
+  width: 2rem;
+  height: 2rem;
+  padding-top: 0.2rem;
+  border-radius: 1rem;
+  background: #FFF;
+  color: #000;
+  border-color: #000;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 5px;
+}
+body .image_view span:hover {
+  transition: ease-out 0.3s;
+  box-shadow: 0 0 10px;
+}
+body #obj_3d_view {
+  display: none;
+  position: fixed;
+  padding: 25%;
+  background-color: rgba(61, 82, 99, 0.46);
+  z-index: 20;
+  width: 100%;
+  height: 100vh;
+  align-items: stretch;
+  justify-content: center;
+  box-sizing: border-box;
+}
+body #obj_3d_view #obj_3d_view_container {
+  flex-grow: 1;
+  background-color: #EBEBEB;
+}
+body main {
+  margin: 2vw;
+  flex-grow: 1;
+}
+body main > aside {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+body main > aside nav {
+  margin-right: 10px;
+  z-index: 2;
+}
+body main > aside nav ul {
+  box-shadow: 2px 0 6px -2px #0007;
+}
+body main > aside nav ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 72px;
+  height: 74px;
+  padding: 9px;
+  box-sizing: border-box;
+  background-color: #FFF;
+  cursor: pointer;
+  transition: all 200ms;
+}
+body main > aside nav ul li:first-child {
+  border-radius: 4px 4px 0 0;
+}
+body main > aside nav ul li:last-child {
+  border-radius: 0 0 4px 4px;
+}
+body main > aside nav ul li:not(:last-child) {
+  border-bottom: 1px solid #75757530;
+}
+body main > aside nav ul li:hover {
+  background-color: #EEE;
+}
+body main > aside nav ul li.active {
+  box-shadow: 0 3px 4px -4px #0007 inset, 0 -3px 4px -4px #0007 inset;
+}
+body main > aside nav ul li span {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 10px;
+  margin-top: 5px;
+}
+body main > aside section#card {
+  min-width: 430px;
+  min-height: 560px;
+  box-shadow: -20px -20px #09374EA0, 2px 0 6px -2px #0007;
+  border-radius: 4px;
+  z-index: 1;
+}
+body main > aside section#card .portrait {
+  flex-grow: 5;
+  justify-content: flex-end;
+  background-color: #8F8F8F;
+  background-image: url("/images/portrait-removebg-lr.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px 4px 0 0;
+}
+body main > aside section#card .info {
+  flex-grow: 1;
+}
+body main > aside section#card .info h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+body main > aside section#card .info h3 {
+  font-size: 16px;
+  color: #09374E;
+  margin-top: 3px;
+  font-weight: 500;
+}
+body main > aside section#card .info ul {
+  margin: 28px 0 36px;
+}
+body main > aside section#card .info ul li:not(:last-child) {
+  margin-right: 21px;
+}
+body main > aside section#card .info ul li a {
+  display: flex;
+}
+body main > aside section#card .info button {
+  font-size: 15px;
+  background: #0000;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+body main > section.bgw {
+  position: relative;
+  padding: 30px 50px 70px;
+  margin-left: 512px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex-grow: 1;
+  color: #4A4A4A;
+  align-self: stretch;
+  background: #f8f8f8;
+}
+body main > section.bgw > header {
+  justify-content: space-between;
+  margin-bottom: 27px;
+}
+body main > section.bgw > header h2 {
+  display: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+body main > section.bgw > header h2.active {
+  display: block;
+}
+body main > section.bgw > header nav {
+  display: none;
+}
+body main > section.bgw > header nav.active {
+  display: block;
+}
+body main > section.bgw > header nav ul li {
+  font-weight: 500;
+  cursor: pointer;
+}
+body main > section.bgw > header nav ul li.active {
+  color: #09374EA0;
+}
+body main > section.bgw > header nav ul li:not(:first-child) {
+  margin-left: 30px;
+}
+body main > section.bgw > .shader_line {
+  height: 1px;
+  width: calc(100% + 50px * 2);
+  margin-left: -50px;
+  background: linear-gradient(45deg, #DEDEDE, #DEDEDE30);
+}
+body main > section.bgw > article {
+  display: none;
+  flex-direction: column;
+  margin-top: 27px;
+}
+body main > section.bgw > article.active {
+  display: flex;
+}
+body main > section.bgw > article#about h4 {
+  margin-bottom: 10px;
+}
+body main > section.bgw > article#about p {
+  margin-bottom: 20px;
+}
+body main > section.bgw > article#resume > div.content.resume {
+  flex: 1;
+}
+body main > section.bgw > article#resume > div.content.resume ul {
+  list-style: unset;
+  margin-left: 1.5rem;
+}
+body main > section.bgw > article#resume > div.content.resume:last-child {
+  padding-left: 32px;
+}
+body main > section.bgw > article#resume > div.content.resume .entry:not(:first-child) {
+  margin-top: 1rem;
+}
+body main > section.bgw > article#resume > div.content.resume .entry strong {
+  font-weight: 600;
+}
+body main > section.bgw > article#resume > div.content.resume h4.education {
+  margin-top: 27px;
+}
+body main > section.bgw > article#resume .shader_line {
+  width: 1px;
+  margin-top: -27px;
+  align-self: stretch;
+  background: linear-gradient(#DEDEDE, #DEDEDE30);
+}
+body main > section.bgw > article#resume > h2 {
+  margin: 40px 0 27px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+body main > section.bgw > article#resume > .shader_line {
+  height: 1px;
+  width: calc(100% + 50px * 2);
+  margin-left: -50px;
+  background: linear-gradient(45deg, #DEDEDE, #DEDEDE30);
+  margin-top: 6px;
+}
+body main > section.bgw > article#resume > div.content.skills {
+  margin-top: 27px;
+}
+body main > section.bgw > article#resume > div.content.skills .col {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+body main > section.bgw > article#resume > div.content.skills .col:first-child .entry {
+  display: flex;
+  align-items: center;
+}
+body main > section.bgw > article#resume > div.content.skills .col:first-child .entry span {
+  flex-grow: 1;
+}
+body main > section.bgw > article#resume > div.content.skills .col:first-child .entry span label {
+  color: #b1494a;
+}
+body main > section.bgw > article#resume > div.content.skills .col:first-child .entry > div {
+  width: 60px;
+  height: 60px;
+  margin-top: -15px;
+  margin-right: 1.8rem;
+}
+body main > section.bgw > article#resume > div.content.skills .col:last-child {
+  padding-left: 32px;
+}
+body main > section.bgw > article#resume > div.content.skills .col:last-child .shader_line {
+  height: 1px;
+  align-self: stretch;
+  width: calc(100% + 32px);
+  background: linear-gradient(45deg, #DEDEDE30, #DEDEDE, #DEDEDE30);
+  margin: 33px 0 18px -32px;
+}
+body main > section.bgw > article#resume > div.content.skills .col:last-child .entry .horizontalBar {
+  height: 10px;
+  max-width: 300px;
+  background-color: #EBEBEB;
+  margin-top: 12px;
+}
+body main > section.bgw > article#resume > div.content.skills .col:last-child .entry .horizontalBar .filler {
+  height: 100%;
+}
+body main > section.bgw > article#resume > div.content.skills .col:last-child .entry.english .horizontalBar .filler {
+  width: 78%;
+  background-color: #F05B30;
+}
+body main > section.bgw > article#resume > div.content.skills .col:last-child .entry.arduino .horizontalBar .filler {
+  width: 40%;
+  background-color: #462446;
+}
+body main > section.bgw > article#resume > div.content.skills .col:last-child .entry.product_design .horizontalBar .filler {
+  width: 80%;
+  background-color: #3D5263;
+}
+body main > section.bgw > article#resume > div.content.skills .col h4 {
+  margin-bottom: 4px;
+}
+body main > section.bgw > article#resume > div.content.skills .col .entry {
+  margin-top: 30px;
+}
+body main > section.bgw > article#resume > div.content.skills > .shader_line {
+  width: 1px;
+  margin-top: -27px;
+  align-self: stretch;
+  background: linear-gradient(#DEDEDE, #DEDEDE30);
+}
+body main > section.bgw > article#resume h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+body main > section.bgw > article#portfolio > section {
+  display: none;
+}
+body main > section.bgw > article#portfolio > section.active {
+  display: unset;
+}
+body main > section.bgw > article#portfolio > section div.pics {
+  flex-wrap: wrap;
+}
+body main > section.bgw > article#portfolio > section div.pics div.pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main > section.bgw > article#portfolio > section div.pics div.pic label {
+  margin-top: 10px;
+  cursor: pointer;
+}
+body main > section.bgw > article#portfolio > section div.pics .frame {
+  margin: 1rem 5px 0 5px;
+  width: 210px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid #AAA5;
+  box-shadow: 0 3px 6px #00000020;
+  cursor: pointer;
+}
+body main > section.bgw > article#portfolio > section div.pics .frame:hover {
+  box-shadow: 0 5px 9px #00000020;
+}
+body main > section.bgw > article#contact > p {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+body main > section.bgw > article#contact label {
+  display: flex;
+  flex-direction: column;
+}
+body main > section.bgw > article#contact label > input, body main > section.bgw > article#contact label > textarea {
+  margin-top: 5px;
+}
+body main > section.bgw > article#contact > div {
+  margin-top: 1rem;
+}
+body main > section.bgw > article#contact > div > div {
+  flex-grow: 1;
+}
+body main > section.bgw > article#contact > div > div:first-child {
+  margin-right: 3rem;
+}
+body main > section.bgw > article#contact > button {
+  margin-top: 1.5rem;
+  align-self: flex-start;
+  background-color: #3D5263;
+  color: white;
+  padding: 3px 12px;
+  font-weight: 600;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  border: none;
+  text-transform: uppercase;
+}
+body main > section.bgw > article#contact .mid {
+  align-self: center;
+}
+body main > section.bgw > article#contact .mid > div {
+  margin-top: 10px;
+}
+body main > section.bgw > article#contact .mid a {
+  text-decoration: none;
+  color: unset;
+  font-weight: 600;
+}
+body main > section.bgw > article#contact .mid span {
+  background-color: #3D5263;
+  color: white;
+  padding: 2px 5px;
+  font-weight: 600;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=home.css.map */
