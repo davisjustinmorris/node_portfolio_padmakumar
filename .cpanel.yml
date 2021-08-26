@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/djmodqbm/doc-root/ipadmakumar_node_git
+    - /bin/cp -R public $DEPLOYPATH
+    - /bin/cp -R views $DEPLOYPATH
+    - /bin/cp -R app.py $DEPLOYPATH
+    - /bin/cp -R package.json $DEPLOYPATH
