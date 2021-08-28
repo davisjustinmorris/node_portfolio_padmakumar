@@ -261,17 +261,22 @@ body
       >article#resume
         >div.content.resume
           flex: 1
-          ul
-            list-style: unset
-            margin-left: 1.5rem
           &:last-child
             padding-left: 32px
-          .entry:not(:first-child)
-            margin-top: 1rem
-          .entry strong
-            font-weight: 600
+          .entry
+            margin-top: 2rem
+            &:first-of-type, &:last-of-type
+              margin-top: 1.5rem
+            strong
+              font-weight: 600
+            *
+              margin-top: 3px
+            ul
+              list-style: unset
+            ul
+              margin-left: 2rem
           h4.education
-            margin-top: 27px
+            margin-top: 35px
         .shader_line
           @include verticalFaderLine
 

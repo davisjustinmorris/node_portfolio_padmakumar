@@ -265,21 +265,29 @@ body main > section.bgw > article#about p {
 body main > section.bgw > article#resume > div.content.resume {
   flex: 1;
 }
-body main > section.bgw > article#resume > div.content.resume ul {
-  list-style: unset;
-  margin-left: 1.5rem;
-}
 body main > section.bgw > article#resume > div.content.resume:last-child {
   padding-left: 32px;
 }
-body main > section.bgw > article#resume > div.content.resume .entry:not(:first-child) {
-  margin-top: 1rem;
+body main > section.bgw > article#resume > div.content.resume .entry {
+  margin-top: 2rem;
+}
+body main > section.bgw > article#resume > div.content.resume .entry:first-of-type, body main > section.bgw > article#resume > div.content.resume .entry:last-of-type {
+  margin-top: 1.5rem;
 }
 body main > section.bgw > article#resume > div.content.resume .entry strong {
   font-weight: 600;
 }
+body main > section.bgw > article#resume > div.content.resume .entry * {
+  margin-top: 3px;
+}
+body main > section.bgw > article#resume > div.content.resume .entry ul {
+  list-style: unset;
+}
+body main > section.bgw > article#resume > div.content.resume .entry ul {
+  margin-left: 2rem;
+}
 body main > section.bgw > article#resume > div.content.resume h4.education {
-  margin-top: 27px;
+  margin-top: 35px;
 }
 body main > section.bgw > article#resume .shader_line {
   width: 1px;
