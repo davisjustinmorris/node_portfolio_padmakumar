@@ -241,7 +241,7 @@ body
               &.active
                 color: $primaryAccentOff
               &:not(:first-child)
-                margin-left: 30px
+                margin-left: 40px
       >.shader_line
         @include horizontalFaderLine
 
@@ -274,7 +274,7 @@ body
             ul
               list-style: unset
             ul
-              margin-left: 2rem
+              margin-left: 10rem
           h4.education
             margin-top: 35px
         .shader_line
@@ -354,6 +354,8 @@ body
               label
                 margin-top: 10px
                 cursor: pointer
+                font-size: 0.9rem
+                font-weight: 300
             .frame
               margin: 1rem 5px 0 5px
               width: 210px
@@ -371,11 +373,16 @@ body
         >p
           font-weight: 600
           margin-bottom: 1rem
+          line-height: 2rem
         label
           display: flex
           flex-direction: column
           > input, > textarea
             margin-top: 5px
+          > input
+            height: 2rem
+          > textarea
+            height: 15rem
         >div
           margin-top: 1rem
           >div
