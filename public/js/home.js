@@ -38,7 +38,7 @@ $(document).ready(function () {
         $(`#portfolio >section.${name}`).addClass('active');
     });
 
-    $(`body > .image_view > span`).on('click', function () {
+    $(`body > .image_view span`).on('click', function () {
         $(`body > .image_view`).hide();
     })
     $(`#portfolio > section .frame`).on('click', function () {
