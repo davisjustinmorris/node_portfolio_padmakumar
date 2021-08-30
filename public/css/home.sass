@@ -157,6 +157,7 @@ body
             &:hover
               background-color: #EEE
             &.active
+              background-color: #DCDCDC
               box-shadow: 0 3px 4px -4px $shadowColor inset, 0 -3px 4px -4px $shadowColor inset
             span
               text-transform: uppercase
@@ -232,10 +233,16 @@ body
             li
               font-weight: 500
               cursor: pointer
+              padding: 20px
+              background-color: $articleDivider_A
               &.active
                 color: $primaryAccentOff
-              &:not(:first-child)
-                margin-left: 40px
+                background-color: $articleDivider_B
+              &:first-child
+                border-radius: 10px 0 0 10px
+              &:last-child
+                border-radius: 0 10px 10px 0
+
       >.shader_line
         @include horizontalFaderLine
 
@@ -339,6 +346,9 @@ body
           &.active
             display: unset
 
+          .row h3
+            margin: 0 0 1rem 0
+
           div.pics
             flex-wrap: wrap
             div.pic
@@ -362,6 +372,13 @@ body
               cursor: pointer
               &:hover
                 box-shadow: 0 5px 9px #00000020
+
+        >section:not(.images) .pics .pic .frame
+          margin-left: 22px
+          margin-right: 22px
+
+        >section.projects .pics .pic
+          margin: 0 1rem
 
       >article#contact
         flex-grow: 1

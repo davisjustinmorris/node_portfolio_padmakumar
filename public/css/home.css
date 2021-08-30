@@ -145,6 +145,7 @@ body main > aside nav ul li:hover {
   background-color: #EEE;
 }
 body main > aside nav ul li.active {
+  background-color: #DCDCDC;
   box-shadow: 0 3px 4px -4px #0007 inset, 0 -3px 4px -4px #0007 inset;
 }
 body main > aside nav ul li span {
@@ -233,12 +234,18 @@ body main > section.bgw > header nav.active {
 body main > section.bgw > header nav ul li {
   font-weight: 500;
   cursor: pointer;
+  padding: 20px;
+  background-color: #DEDEDE;
 }
 body main > section.bgw > header nav ul li.active {
   color: #09374EA0;
+  background-color: #DEDEDE30;
 }
-body main > section.bgw > header nav ul li:not(:first-child) {
-  margin-left: 40px;
+body main > section.bgw > header nav ul li:first-child {
+  border-radius: 10px 0 0 10px;
+}
+body main > section.bgw > header nav ul li:last-child {
+  border-radius: 0 10px 10px 0;
 }
 body main > section.bgw > .shader_line {
   height: 1px;
@@ -382,6 +389,9 @@ body main > section.bgw > article#portfolio > section {
 body main > section.bgw > article#portfolio > section.active {
   display: unset;
 }
+body main > section.bgw > article#portfolio > section .row h3 {
+  margin: 0 0 1rem 0;
+}
 body main > section.bgw > article#portfolio > section div.pics {
   flex-wrap: wrap;
 }
@@ -409,6 +419,13 @@ body main > section.bgw > article#portfolio > section div.pics .frame {
 }
 body main > section.bgw > article#portfolio > section div.pics .frame:hover {
   box-shadow: 0 5px 9px #00000020;
+}
+body main > section.bgw > article#portfolio > section:not(.images) .pics .pic .frame {
+  margin-left: 22px;
+  margin-right: 22px;
+}
+body main > section.bgw > article#portfolio > section.projects .pics .pic {
+  margin: 0 1rem;
 }
 body main > section.bgw > article#contact {
   flex-grow: 1;
