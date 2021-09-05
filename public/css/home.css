@@ -426,6 +426,10 @@ body main > section.bgw > article#portfolio > section:not(.images) .pics .pic .f
 }
 body main > section.bgw > article#portfolio > section.projects .pics .pic {
   margin: 0 1rem;
+  max-width: 45%;
+}
+body main > section.bgw > article#portfolio > section.projects .pics .pic label {
+  text-align: center;
 }
 body main > section.bgw > article#contact {
   flex-grow: 1;
