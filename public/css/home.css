@@ -53,7 +53,7 @@ body .image_view {
   justify-content: center;
 }
 body .image_view .im_container {
-  padding: 2rem 0;
+  padding: 3rem 0;
   position: relative;
 }
 body .image_view .im_container img {
@@ -68,7 +68,7 @@ body .image_view .im_container span {
   box-sizing: border-box;
   align-self: flex-end;
   position: absolute;
-  top: 0;
+  top: 1rem;
   right: -3rem;
   width: 2rem;
   height: 2rem;
