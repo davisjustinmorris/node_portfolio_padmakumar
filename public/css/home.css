@@ -486,5 +486,9 @@ body main > section.bgw > article#contact .mid a {
 body main > section.bgw > article#contact .mid a img {
   margin-right: 5px;
 }
+body main > section.bgw > article#contact .my_gmap span {
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
 
 /*# sourceMappingURL=home.css.map */
