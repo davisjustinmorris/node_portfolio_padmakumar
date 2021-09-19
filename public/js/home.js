@@ -1,5 +1,4 @@
-// const THREE = require('three');
-let fl_nm = "solenoid_valve_12v_dc-1.obj";
+// let fl_nm = "solenoid_valve_12v_dc-1.obj";
 
 $(document).ready(function () {
     $(`body > main > aside > nav > ul > li`).on('click', function () {
@@ -76,6 +75,41 @@ $(document).ready(function () {
         document.getElementById('resume_chart_6').getContext('2d'),
         {type: "doughnut", data: {datasets: [{data: [70, 30], backgroundColor: ['rgb(117, 175, 125)', 'rgb(200, 200, 200)']}]}}
     );
+
+    $(`article#contact > button`).on('click', function () {
+        let first_name = $(`article#contact input[name='first_name']`).val();
+        let last_name = $(`article#contact input[name='last_name']`).val();
+        let sender_email = $(`article#contact input[name='email']`).val();
+        let sender_message = $(`article#contact textarea[name='message']`).val();
+
+        // validate email
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!re.test(sender_email)) {
+            alert('The given email id seems to be invalid. Please try again with a different one.');
+            return;
+        }
+
+        // confirm if empty message text box should be sent
+        if (sender_message.length === 0) {
+            if (!confirm('Are you sure you want to send the message with an empty text?'))
+                return;
+        }
+
+        let post_data = {first_name, last_name, sender_email, sender_message};
+        console.log('sending post data: ', post_data)
+
+        $.ajax({
+            url: '/mail_forward',
+            type: "POST",
+            data: JSON.stringify(post_data),
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (data, status, xhr){
+                console.log('response: data, status, xhr');
+                console.log(data, status, xhr);
+            }
+        });
+    });
 });
 
 let res_map = {
