@@ -55,26 +55,42 @@ $(document).ready(function () {
         $(`body > .image_view`).show();
     });
 
-    let chart_1 = new Chart(
-        document.getElementById('resume_chart_1').getContext('2d'),
-        {type: "doughnut", data: {datasets: [{data: [80, 20], backgroundColor: ['rgb(240, 182, 99)', 'rgb(200, 200, 200)']}]}}
-    );
-    let chart_2 = new Chart(
-        document.getElementById('resume_chart_2').getContext('2d'),
-        {type: "doughnut", data: {datasets: [{data: [65, 35], backgroundColor: ['rgb(216, 106, 108)', 'rgb(200, 200, 200)']}]}}
-    );
-    let chart_3 = new Chart(
-        document.getElementById('resume_chart_3').getContext('2d'),
-        {type: "doughnut", data: {datasets: [{data: [20, 80], backgroundColor: ['rgb(95, 183, 157)', 'rgb(200, 200, 200)']}]}}
-    );
-    let chart_4 = new Chart(
-        document.getElementById('resume_chart_4').getContext('2d'),
-        {type: "doughnut", data: {datasets: [{data: [70, 30], backgroundColor: ['rgb(94, 139, 187)', 'rgb(200, 200, 200)']}]}}
-    );
-    let chart_6 = new Chart(
-        document.getElementById('resume_chart_6').getContext('2d'),
-        {type: "doughnut", data: {datasets: [{data: [70, 30], backgroundColor: ['rgb(117, 175, 125)', 'rgb(200, 200, 200)']}]}}
-    );
+    let chart_data = [
+        [[80, 20], ['rgb(240, 182, 99)', 'rgb(200, 200, 200)']],
+        [[65, 35], ['rgb(216, 106, 108)', 'rgb(200, 200, 200)']],
+        [[20, 80], ['rgb(95, 183, 157)', 'rgb(200, 200, 200)']],
+        [[70, 30], ['rgb(94, 139, 187)', 'rgb(200, 200, 200)']],
+        [[70, 30], ['rgb(117, 175, 125)', 'rgb(200, 200, 200)']]
+    ]
+    let charts = [];
+    for (let i =0; i<chart_data.length; i++){
+        let elm = document.getElementById('resume_chart_'+(i+1).toString()).getContext('2d')
+        charts[i] = new Chart(elm, {
+            type: "doughnut",
+            data: {datasets: [{data: chart_data[i][0], backgroundColor: chart_data[i][1]}]}
+        })
+    }
+
+    // let chart_1 = new Chart(
+    //     document.getElementById('resume_chart_1').getContext('2d'),
+    //     {type: "doughnut", data: {datasets: [{data: , backgroundColor: }]}}
+    // );
+    // let chart_2 = new Chart(
+    //     document.getElementById('resume_chart_2').getContext('2d'),
+    //     {type: "doughnut", data: {datasets: [{data: , backgroundColor: }]}}
+    // );
+    // let chart_3 = new Chart(
+    //     document.getElementById('resume_chart_3').getContext('2d'),
+    //     {type: "doughnut", data: {datasets: [{data: , backgroundColor: }]}}
+    // );
+    // let chart_4 = new Chart(
+    //     document.getElementById('resume_chart_4').getContext('2d'),
+    //     {type: "doughnut", data: {datasets: [{data: , backgroundColor: }]}}
+    // );
+    // let chart_6 = new Chart(
+    //     document.getElementById('resume_chart_6').getContext('2d'),
+    //     {type: "doughnut", data: {datasets: [{data: , backgroundColor: }]}}
+    // );
 
     $(`article#contact > button`).on('click', function () {
         let first_name = $(`article#contact input[name='first_name']`).val();
@@ -109,13 +125,13 @@ $(document).ready(function () {
             success: function (data, status, xhr){
                 console.log('response: data, status, xhr');
                 console.log(data, status, xhr);
-                $(`article#contact input, article#contact input`).val("");
+                $(`article#contact input, article#contact textarea`).val("");
             },
             error: function (a, b) {
-                console.log(a, b);
                 console.log("ajax error");
+                console.log(a, b);
             },
-            complete: function(data) {
+            complete: function() {
                 $(`article#contact > button`).prop('disabled', false);
             }
         });
