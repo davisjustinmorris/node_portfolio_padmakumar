@@ -63,11 +63,11 @@ $(document).ready(function () {
         [[70, 30], ['rgb(117, 175, 125)', 'rgb(200, 200, 200)']]
     ]
     let charts = [];
-    for (let i =0; i<chart_data.length; i++){
-        let elm = document.getElementById('resume_chart_'+(i+1).toString()).getContext('2d')
-        charts[i] = new Chart(elm, {
+    for (let i=1; i<=chart_data.length; i++){
+        let elm = document.getElementById('resume_chart_'+(i).toString()).getContext('2d')
+        charts[i-1] = new Chart(elm, {
             type: "doughnut",
-            data: {datasets: [{data: chart_data[i][0], backgroundColor: chart_data[i][1]}]}
+            data: {datasets: [{data: chart_data[i-1][0], backgroundColor: chart_data[i-1][1]}]}
         })
     }
 
