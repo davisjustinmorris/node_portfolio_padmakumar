@@ -43,11 +43,12 @@ app.post('/mail_forward', function (req, res) {
         }
     });
 
+    let mail_msg = "Name: "+first_name+" "+last_name+"\nEmail: "+sender_email+"\n\nMessage: "+sender_message
     const mailOptions = {
         from: server_email,
         to: padmakumar_email,
         subject: 'ipadmakumar.com received a message',
-        text: `Name: ${first_name} ${last_name}\nEmail: ${sender_email}\n\nMessage: ${sender_message}`
+        text: mail_msg
     };
 
     console.log("got mailOptions: ", mailOptions);
@@ -59,11 +60,10 @@ app.post('/mail_forward', function (req, res) {
             res.send('failed');
         } else {
             console.log('Email sent: ' + info.response);
-            res.send('ok');
+            res.send('sent');
         }
     });
 
-    res.send('ok');
     res.end();
 });
 

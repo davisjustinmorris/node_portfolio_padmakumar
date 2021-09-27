@@ -89,6 +89,8 @@ $(document).ready(function () {
             return;
         }
 
+        $(`article#contact > button`).prop('disabled', true);
+
         // confirm if empty message text box should be sent
         if (sender_message.length === 0) {
             if (!confirm('Are you sure you want to send the message with an empty text?'))
@@ -107,6 +109,10 @@ $(document).ready(function () {
             success: function (data, status, xhr){
                 console.log('response: data, status, xhr');
                 console.log(data, status, xhr);
+                $(`article#contact input, article#contact input`).val("");
+            },
+            complete: function(data) {
+                $(`article#contact > button`).prop('disabled', false);
             }
         });
     });
