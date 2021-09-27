@@ -105,7 +105,7 @@ $(document).ready(function () {
             type: "POST",
             data: JSON.stringify(post_data),
             contentType: 'application/json',
-            dataType: 'json',
+            dataType: 'text',
             success: function (data, status, xhr){
                 console.log('response: data, status, xhr');
                 console.log(data, status, xhr);
