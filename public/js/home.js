@@ -62,35 +62,13 @@ $(document).ready(function () {
         [[70, 30], ['rgb(94, 139, 187)', 'rgb(200, 200, 200)']],
         [[70, 30], ['rgb(117, 175, 125)', 'rgb(200, 200, 200)']]
     ]
-    let charts = [];
     for (let i=1; i<=chart_data.length; i++){
-        let elm = document.getElementById('resume_chart_'+(i).toString()).getContext('2d')
-        charts[i-1] = new Chart(elm, {
+        let elm = document.getElementById('resume_chart_'+(i).toString()).getContext('2d');
+        new Chart(elm, {
             type: "doughnut",
             data: {datasets: [{data: chart_data[i-1][0], backgroundColor: chart_data[i-1][1]}]}
         })
     }
-
-    // let chart_1 = new Chart(
-    //     document.getElementById('resume_chart_1').getContext('2d'),
-    //     {type: "doughnut", data: {datasets: [{data: , backgroundColor: }]}}
-    // );
-    // let chart_2 = new Chart(
-    //     document.getElementById('resume_chart_2').getContext('2d'),
-    //     {type: "doughnut", data: {datasets: [{data: , backgroundColor: }]}}
-    // );
-    // let chart_3 = new Chart(
-    //     document.getElementById('resume_chart_3').getContext('2d'),
-    //     {type: "doughnut", data: {datasets: [{data: , backgroundColor: }]}}
-    // );
-    // let chart_4 = new Chart(
-    //     document.getElementById('resume_chart_4').getContext('2d'),
-    //     {type: "doughnut", data: {datasets: [{data: , backgroundColor: }]}}
-    // );
-    // let chart_6 = new Chart(
-    //     document.getElementById('resume_chart_6').getContext('2d'),
-    //     {type: "doughnut", data: {datasets: [{data: , backgroundColor: }]}}
-    // );
 
     $(`article#contact > button`).on('click', function () {
         let first_name = $(`article#contact input[name='first_name']`).val();
