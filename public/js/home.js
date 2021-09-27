@@ -111,6 +111,7 @@ $(document).ready(function () {
                 console.log(data, status, xhr);
                 $(`article#contact input, article#contact input`).val("");
             },
+            error: function () {console.log("ajax error");},
             complete: function(data) {
                 $(`article#contact > button`).prop('disabled', false);
             }
