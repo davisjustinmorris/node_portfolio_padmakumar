@@ -35,8 +35,8 @@ app.post('/mail_forward', function (req, res) {
     let sender_email = req.body.sender_email;
     let sender_message = req.body.sender_message;
 
-    // const padmakumar_email = "padmakumar.ks@icloud.com";
-    const padmakumar_email = "buzzwithdj@gmail.com";
+    const padmakumar_email = "padmakumar.ks@icloud.com";
+    // const padmakumar_email = "buzzwithdj@gmail.com";
     const server_email = "ipadmakumar2k21@gmail.com";
     const server_pwd = "nrgdugxotfhahanz";
     const transporter = nodemailer.createTransport({
