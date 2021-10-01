@@ -285,6 +285,7 @@
                         <textarea name="message" cols="30" rows="7"></textarea>
                     </label>
                 </div>
+                <div id="recaptcha_contact_me"></div>
                 <button>Submit</button>
 
                 <div class="spacer" style="flex-grow: 1"></div>
@@ -313,6 +314,18 @@
     </main>
 
     <input type="hidden" name="internal_nav_selection" id="internal_nav_selection" value="<%= internal_nav_selection %>">
+
+    <script>
+        var flag_captcha = false;
+        var onloadCallback = function() {
+            grecaptcha.render('recaptcha_contact_me', {
+                'sitekey' : '6LfjMaIcAAAAAG0eCZzBV4ulmNlYE1b1_1QApfAR',
+                'callback' : (response) => flag_captcha = response!== null,
+                'expired-callback': () => flag_captcha = false
+            });
+        };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
 </body>
 </html>

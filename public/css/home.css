@@ -471,6 +471,13 @@ body main > section.bgw > article#contact > button {
   font-size: 0.9rem;
   border: none;
   text-transform: uppercase;
+  cursor: pointer;
+}
+body main > section.bgw > article#contact > button:disabled {
+  background-color: #809194;
+}
+body main > section.bgw > article#contact > button:hover {
+  background-color: #5d87b5;
 }
 body main > section.bgw > article#contact .mid {
   align-self: center;

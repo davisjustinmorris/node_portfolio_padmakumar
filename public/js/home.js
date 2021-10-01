@@ -83,13 +83,18 @@ $(document).ready(function () {
             return;
         }
 
-        $(`article#contact > button`).prop('disabled', true);
-
         // confirm if empty message text box should be sent
         if (sender_message.length === 0) {
             if (!confirm('Are you sure you want to send the message with an empty text?'))
                 return;
         }
+
+        if (!flag_captcha) {
+            alert('verify the captcha and try again');
+            return;
+        }
+
+        $(`article#contact > button`).prop('disabled', true);
 
         let post_data = {first_name, last_name, sender_email, sender_message};
         console.log('sending post data: ', post_data)

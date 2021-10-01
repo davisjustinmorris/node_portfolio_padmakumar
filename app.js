@@ -5,6 +5,9 @@ const app = express();
 
 const port = 9000;
 
+const recaptcha_site_key = "6LfjMaIcAAAAAG0eCZzBV4ulmNlYE1b1_1QApfAR";
+const recaptcha_secrete_key = "6LfjMaIcAAAAAIh5CpWMvAqZT4LW3q6BPpXNeavI";
+
 // static files
 app.use(express.static('public'));
 app.use(express.json());
@@ -32,7 +35,8 @@ app.post('/mail_forward', function (req, res) {
     let sender_email = req.body.sender_email;
     let sender_message = req.body.sender_message;
 
-    const padmakumar_email = "padmakumar.ks@icloud.com";
+    // const padmakumar_email = "padmakumar.ks@icloud.com";
+    const padmakumar_email = "buzzwithdj@gmail.com";
     const server_email = "ipadmakumar2k21@gmail.com";
     const server_pwd = "nrgdugxotfhahanz";
     const transporter = nodemailer.createTransport({
