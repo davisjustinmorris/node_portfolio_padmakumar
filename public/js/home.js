@@ -128,8 +128,10 @@ let res_map = {
     'res_ib_5': '/images/image_board/5.jpg',
     'res_ib_9': '/images/image_board/9.jpg',
     'res_ib_10': '/images/image_board/10.jpg',
-    'res_ar_1': '/images/art/art_1.jpg',
-    'res_ar_2': '/images/art/art_2.jpg',
+    'res_ar_1': '/images/art/new-1.png',
+    'res_ar_2': '/images/art/new-2.png',
+    'res_ar_3': '/images/art/old-1.png',
+    'res_ar_4': '/images/art/old-2.png',
     'res_pr_1': [
         '/images/projects/proj_1/TEMP_COVER_SLIDE.jpg',
         '/images/projects/proj_1/slide1.png',
