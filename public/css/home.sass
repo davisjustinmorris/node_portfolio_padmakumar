@@ -79,13 +79,19 @@ body
     .im_container
       padding: 3rem 0
       position: relative
-      img, div
+      img, div, iframe
         max-height: 95vh
         max-width: 90vw
         border: 1px solid #0002
         animation-name: zoom
         animation-duration: 0.6s
         margin: 5px 0
+      div, iframe
+        height: 95vh
+        width: 90vw
+      div
+        margin: unset
+        border: unset
       span
         box-sizing: border-box
         align-self: flex-end
