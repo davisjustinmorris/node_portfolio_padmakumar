@@ -42,14 +42,21 @@ $(document).ready(function () {
     })
     $(`#portfolio > section .frame`).on('click', function () {
         let data = res_map[this.id];
-        $(`body > .image_view img`).remove();
+        $(`body > .image_view > .im_container :not(span.close)`).remove();
+        $(`body > .image_view > .desc`).remove();
 
         if (typeof data === 'string')
             $(`body > .image_view > .im_container`).append(`<img src="${data}" alt="Image Showcase"/>`);
-        else {
+        else if (Array.isArray(data)) {
             data.forEach(function (e) {
                 $(`body > .image_view > .im_container`).append(`<img src="${e}" alt="Image Showcase"/>`);
             });
+        } else {
+            $(`body > .image_view > .im_container`).append(`<img src="${data.url}" alt="Image Showcase"/>`);
+            $(`body > .image_view`).append(`<div class="desc"></div>`);
+            for (const [key, value] of Object.entries(data.desc)) {
+                $(`body > .image_view > div.desc`).append(`<div><span>${key}: </span><span>${value}</span></div>`);
+            }
         }
 
         $(`body > .image_view`).show();
@@ -128,10 +135,38 @@ let res_map = {
     'res_ib_5': '/images/image_board/5.jpg',
     'res_ib_9': '/images/image_board/9.jpg',
     'res_ib_10': '/images/image_board/10.jpg',
-    'res_ar_1': '/images/art/new-1.png',
-    'res_ar_2': '/images/art/new-2.png',
-    'res_ar_3': '/images/art/old-1.png',
-    'res_ar_4': '/images/art/old-2.png',
+    'res_ar_1': {
+        url: '/images/art/new-1.png',
+        desc: {
+            Subject : "Model",
+            Medium  : "Toned paper/ Graphite pencil",
+            Date    : "28 September 2021"
+        }
+    },
+    'res_ar_2': {
+        url: '/images/art/new-2.png',
+        desc: {
+            Subject : "Native American Indian",
+            Medium  : "Toned paper/ Graphite pencil",
+            Date    : "22 September 2021"
+        }
+    },
+    'res_ar_3': {
+        url: '/images/art/old-1.png',
+        desc: {
+            Subject : "Abraham Lincoln",
+            Medium  : "Toned paper/ Graphite pencil",
+            Date    : "28 April 2020"
+        }
+    },
+    'res_ar_4': {
+        url: '/images/art/old-2.png',
+        desc: {
+            Subject : "Model",
+            Medium  : "Toned paper/ Graphite pencil",
+            Date    : "08 June 2020"
+        }
+    },
     'res_pr_1': [
         '/images/projects/proj_1/TEMP_COVER_SLIDE.jpg',
         '/images/projects/proj_1/slide1.png',

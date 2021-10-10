@@ -86,6 +86,13 @@ body .image_view .im_container span:hover {
   transition: ease-out 0.3s;
   box-shadow: 0 0 10px;
 }
+body .image_view .desc {
+  color: #4A4A4A;
+  margin-top: -2rem;
+}
+body .image_view .desc > div span:first-child {
+  font-weight: 600;
+}
 body #obj_3d_view {
   display: none;
   position: fixed;
