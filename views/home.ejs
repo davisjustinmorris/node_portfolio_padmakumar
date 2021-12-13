@@ -15,7 +15,7 @@
 
     <div class="image_view fx fdc aic" style="display: none">
         <div class="im_container fx fdc aic">
-            <span>x</span>
+            <span class="close">x</span>
         </div>
     </div>
 
@@ -183,7 +183,7 @@
                         </div>
                         <div class="fx entry">
                             <span>Analog Rendering <br><label>- Sketching & Rendering</label></span>
-                            <div><canvas id="resume_chart_6" width="45" height="45"></canvas></div>
+                            <div><canvas id="resume_chart_5" width="45" height="45"></canvas></div>
                         </div>
                     </div>
                     <div class="shader_line"></div>
@@ -214,16 +214,16 @@
             <article id="portfolio">
                 <section class="projects active">
                     <div class="row">
-                        <h3>Project XYZ</h3>
+                        <h3 style="font-weight: 400;">PROJECT COLD COMFORT</h3>
                         <div class="pics fx">
                             <div class="pic">
-                                <div id="res_pr_1" class="frame" style="background-image: url('images/projects/pr_1_1.jpg')"></div>
-                                <label>This presentation discuses about the project workflow</label>
+                                <div id="res_pr_1" class="frame" style="background-image: url('images/projects/proj_1/TEMP_COVER_SLIDE.jpg')"></div>
+                                <label>This presentation discusses about the project workflow</label>
                             </div>
-                            <div class="pic">
-                                <div id="res_pr_2" class="frame" style="background-image: url('images/projects/pr_2.jpg')"></div>
-                                <label>This presentation discuses about the design aspects of the product</label>
-                            </div>
+<!--                            <div class="pic">-->
+<!--                                <div id="res_pr_2" class="frame" style="background-image: url('images/projects/pr_2.jpg')"></div>-->
+<!--                                <label>This presentation discuses about the design aspects of the product</label>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </section>
@@ -241,12 +241,20 @@
                 <section class="art">
                     <div class="pics fx">
                         <div class="pic">
-                            <div id="res_ar_1" class="frame" style="background-image: url('images/art/art_1.jpg')"></div>
-                            <label>Portrait 1</label>
+                            <div id="res_ar_1" class="frame" style="background-image: url('images/art/new-1.png')"></div>
+                            <label>Model</label>
                         </div>
                         <div class="pic">
-                            <div id="res_ar_2" class="frame" style="background-image: url('images/art/art_2.jpg')"></div>
-                            <label>Portrait 2</label>
+                            <div id="res_ar_2" class="frame" style="background-image: url('images/art/new-2.png')"></div>
+                            <label>Native American Indian</label>
+                        </div>
+                        <div class="pic">
+                            <div id="res_ar_3" class="frame" style="background-image: url('images/art/old-1.png')"></div>
+                            <label>Abraham Lincoln</label>
+                        </div>
+                        <div class="pic">
+                            <div id="res_ar_4" class="frame" style="background-image: url('images/art/old-2.png')"></div>
+                            <label>Model</label>
                         </div>
                     </div>
                 </section>
@@ -280,9 +288,10 @@
                 <div class="fx fdc">
                     <label>
                         Message
-                        <textarea name="" id="" cols="30" rows="7"></textarea>
+                        <textarea name="message" cols="30" rows="7"></textarea>
                     </label>
                 </div>
+                <div id="recaptcha_contact_me"></div>
                 <button>Submit</button>
 
                 <div class="spacer" style="flex-grow: 1"></div>
@@ -297,11 +306,32 @@
                         +91-9966822579
                     </a>
                 </div>
+
+                <div class="spacer" style="flex-grow: 1"></div>
+
+                <div class="fx fdc my_gmap">
+                    <span>My current location:</span>
+                    <iframe width="auto" height="270" style="border:0" loading="lazy" allowfullscreen
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAPgtWY_kKem2cYHWH7I5VLvkt4T1SJpSo&q=Whitefield,Bangalore&zoom=4">
+                    </iframe>
+                </div>
             </article>
         </section>
     </main>
 
     <input type="hidden" name="internal_nav_selection" id="internal_nav_selection" value="<%= internal_nav_selection %>">
+
+    <script>
+        var flag_captcha = false;
+        var onloadCallback = function() {
+            grecaptcha.render('recaptcha_contact_me', {
+                'sitekey' : '6LfjMaIcAAAAAG0eCZzBV4ulmNlYE1b1_1QApfAR',
+                'callback' : (response) => flag_captcha = response!== null,
+                'expired-callback': () => flag_captcha = false
+            });
+        };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
 </body>
 </html>
