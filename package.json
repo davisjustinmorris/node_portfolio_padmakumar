@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.12",
-    "three": "^0.132.0"
+    "three": "^0.132.2"
   }
 }

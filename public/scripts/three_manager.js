@@ -4,17 +4,19 @@ $(document).ready(function () {
     let scene = new THREE.Scene();
     let renderer = new THREE.WebGLRenderer({antialias:true});
     let loader = new OBJLoader();
+    let local_window = document.getElementById("obj_3d_view");
     let camera = new THREE.PerspectiveCamera(40,local_window.innerWidth/local_window.innerHeight,1,5000)
-    let local_window = document.getElementById("obj_3d_view_container");
 
-    renderer.setSize(local_window.innerWidth, local_window.innerHeight);
-    local_window.innerHTML = renderer.domElement;
+    renderer.setSize(local_window.innerWidth, local_window.innerHeight, false);
+    local_window.appendChild(renderer.domElement);
+
+    console.log('three man ready to load');
 
     loader.load(
       '/3d/solenoid_valve_12v_dc-1.obj',
 
         function ( object ) {
-            scene.add( object.scene );
+            scene.add( object );
             renderer.render(scene, camera);
         },
 
