@@ -1,6 +1,3 @@
-// const THREE = require('three');
-let fl_nm = "solenoid_valve_12v_dc-1.obj";
-
 $(document).ready(function () {
     $(`body > main > aside > nav > ul > li`).on('click', function () {
         $(`.section_target`).removeClass('active');

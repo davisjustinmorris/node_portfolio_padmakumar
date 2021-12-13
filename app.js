@@ -11,8 +11,6 @@ app.use('/css/', express.static(__dirname+'public/css'));
 app.use('/icons/', express.static(__dirname+ 'public/icons'));
 app.use('/images/', express.static(__dirname+ 'public/images'));
 app.use('/scripts/', express.static(__dirname+'public/scripts'));
-app.use('/build/', express.static(path.join(__dirname, 'node_modules/three/build')));
-app.use('/jsm/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));
 
 // views
 app.set('views', './views');
