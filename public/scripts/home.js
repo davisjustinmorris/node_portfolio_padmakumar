@@ -39,7 +39,9 @@ $(document).ready(function () {
         $(`body > .image_view`).hide();
     })
     $(`#portfolio > section .frame`).on('click', function () {
+        console.log(this.id);
         let data = res_map[this.id];
+        console.log(data);
         $(`body > .image_view img`).remove();
         $(`body > .image_view > .im_container > div`).remove();
 
@@ -83,7 +85,7 @@ $(document).ready(function () {
         {type: "doughnut", data: {datasets: [{data: [70, 30], backgroundColor: ['rgb(94, 139, 187)', 'rgb(200, 200, 200)']}]}}
     );
     let chart_6 = new Chart(
-        document.getElementById('resume_chart_6').getContext('2d'),
+        document.getElementById('resume_chart_5').getContext('2d'),
         {type: "doughnut", data: {datasets: [{data: [70, 30], backgroundColor: ['rgb(117, 175, 125)', 'rgb(200, 200, 200)']}]}}
     );
 });
@@ -95,8 +97,10 @@ let res_map = {
     'res_ib_5': '/images/image_board/5.jpg',
     'res_ib_9': '/images/image_board/9.jpg',
     'res_ib_10': '/images/image_board/10.jpg',
-    'res_ar_1': '/images/art/art_1.jpg',
-    'res_ar_2': '/images/art/art_2.jpg',
+    'res_ar_1': '/images/art/art-1.png',
+    'res_ar_2': '/images/art/art-2.png',
+    'res_ar_3': '/images/art/art-3.png',
+    'res_ar_4': '/images/art/art-4.png',
     'res_pr_1': [
         '/images/projects/pr_1_1.jpg',
         '/images/projects/pr_1_2.jpg',
