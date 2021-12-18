@@ -43,17 +43,17 @@ $(document).ready(function () {
         $(`body > .image_view img`).remove();
         $(`body > .image_view > .im_container > div`).remove();
 
-        $(`body > .image_view > .im_container`).append(`
-<div>
-    <div>
-        <iframe src="test_XR.58.html"
-                allowfullscreen
-                style="position: absolute; top: 0px; left: 0px; height: 100%; width: 1px; min-width: 100%; *width: 100%;"
-                frameborder="0"
-                scrolling="no">
-        </iframe>
-    </div>
-</div>`);
+//         $(`body > .image_view > .im_container`).append(`
+// <div>
+//     <div>
+//         <iframe src="test_XR.58.html"
+//                 allowfullscreen
+//                 style="position: absolute; top: 0px; left: 0px; height: 100%; width: 1px; min-width: 100%; *width: 100%;"
+//                 frameborder="0"
+//                 scrolling="no">
+//         </iframe>
+//     </div>
+// </div>`);
 
         if (typeof data === 'string')
             $(`body > .image_view > .im_container`).append(`<img src="${data}" alt="Image Showcase"/>`);
