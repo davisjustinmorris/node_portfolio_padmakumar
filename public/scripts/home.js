@@ -125,5 +125,25 @@ let res_map = {
         '/images/projects/proj_1/slide21.png',
         '/images/projects/proj_1/slide22.png',
         '/images/projects/proj_1/slide23.png',
+    ],
+    'res_pr_0': [
+        '/images/projects/proj_0/0.png',
+        '/images/projects/proj_0/1.png',
+        '/images/projects/proj_0/2.png',
+        '/images/projects/proj_0/3.png',
+        '/images/projects/proj_0/4.png',
+        '/images/projects/proj_0/5.png',
+        '/images/projects/proj_0/6.png',
+        '/images/projects/proj_0/7.png',
+        '/images/projects/proj_0/8.png',
+        '/images/projects/proj_0/9.png',
+        '/images/projects/proj_0/10.png',
+        '/images/projects/proj_0/11.png',
+        '/images/projects/proj_0/12.png',
+        '/images/projects/proj_0/13.png',
+        '/images/projects/proj_0/14.png',
+        '/images/projects/proj_0/15.png',
+        '/images/projects/proj_0/16.png',
+        '/images/projects/proj_0/17.png'
     ]
 };
