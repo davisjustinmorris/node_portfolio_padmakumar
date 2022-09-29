@@ -100,7 +100,6 @@ let res_map = {
     'res_ar_1': '/images/art/art-1.png',
     'res_ar_2': '/images/art/art-2.png',
     'res_ar_3': '/images/art/art-3.png',
-    'res_ar_4': '/images/art/art-4.png',
     'res_pr_1': [
         '/images/projects/proj_1/TEMP_COVER_SLIDE.jpg',
         '/images/projects/proj_1/slide1.png',
