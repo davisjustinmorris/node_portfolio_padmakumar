@@ -91,12 +91,38 @@ $(document).ready(function () {
 });
 
 let res_map = {
-    'res_ib_1': '/images/image_board/1.jpg',
-    'res_ib_2': '/images/image_board/2.jpg',
-    'res_ib_3': '/images/image_board/3.jpg',
-    'res_ib_5': '/images/image_board/5.jpg',
-    'res_ib_9': '/images/image_board/9.jpg',
-    'res_ib_10': '/images/image_board/10.jpg',
+    'res_ib_1': [
+        '/images/image_board/set1/RENDER_01.png',
+        '/images/image_board/set1/RENDER_02.png',
+        '/images/image_board/set1/RENDER_03.png',
+        '/images/image_board/set1/RENDER_04.png'
+    ],
+    'res_ib_2': [
+        '/images/image_board/set2/SHOT-1.png',
+        '/images/image_board/set2/SHOT-2-1.png',
+        '/images/image_board/set2/SHOT-2-2.png',
+        '/images/image_board/set2/SHOT-3.png',
+        '/images/image_board/set2/SHOT-4.png'
+    ],
+    'res_ib_3': [
+        '/images/image_board/set3/RENDER1.png',
+        '/images/image_board/set3/RENDER2.png',
+        '/images/image_board/set3/RENDER3.png',
+        '/images/image_board/set3/RENDER4.png'
+    ],
+    'res_ib_4': [
+        '/images/image_board/set4/SHOT1.png',
+        '/images/image_board/set4/SHOT2.png',
+        '/images/image_board/set4/SHOT3.png',
+        '/images/image_board/set4/SHOT4.png',
+        '/images/image_board/set4/SHOT5.png',
+        '/images/image_board/set4/FLAT_SHADING1.png'
+    ],
+    'res_ib_5': [
+        '/images/image_board/set5/RENDER1.png',
+        '/images/image_board/set5/RENDER2.png',
+        '/images/image_board/set5/RENDER-3.png'
+    ],
     'res_ar_1': '/images/art/art-1.png',
     'res_ar_2': '/images/art/art-2.png',
     'res_ar_3': '/images/art/art-3.png',

@@ -435,6 +435,10 @@ body main > section.bgw > article#portfolio > section div.pics .frame {
 body main > section.bgw > article#portfolio > section div.pics .frame:hover {
   box-shadow: 0 5px 9px #00000020;
 }
+body main > section.bgw > article#portfolio > section.images .frame {
+  width: 270px !important;
+  height: 270px !important;
+}
 body main > section.bgw > article#portfolio > section:not(.images) .pics .pic .frame {
   margin-left: 22px;
   margin-right: 22px;
