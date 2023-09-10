@@ -438,6 +438,13 @@ body main > section.bgw > article#portfolio > section div.pics .frame:hover {
 body main > section.bgw > article#portfolio > section.images .frame {
   width: 270px !important;
   height: 270px !important;
+  position: relative;
+}
+body main > section.bgw > article#portfolio > section.images .frame svg {
+  position: absolute;
+  margin: 8px;
+  right: 0;
+  top: 0;
 }
 body main > section.bgw > article#portfolio > section:not(.images) .pics .pic .frame {
   margin-left: 22px;
